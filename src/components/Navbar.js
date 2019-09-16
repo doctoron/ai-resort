@@ -15,20 +15,21 @@ export default class Navbar extends Component {
             <nav className="navbar">
                 <div className="nav-center">
                     <div className="nav-header">
+                        {/* <h3 className="nav-header"> Antonio Island</h3> <br /> */}
                         <Link to="/">
                             <img src={logo} alt="Antonio Beach Resort" />
                         </Link>
-                        <button 
-                        type="button" 
-                        className="nav-btn"
-                        onClick={this.handleToggle}
+                        <button
+                            type="button"
+                            className="nav-btn"
+                            onClick={this.handleToggle}
                         >
-                            <FaAlignRight 
-                            className="nav-icon" 
-                            onClick={this.handleToggle} />
+                            <FaAlignRight
+                                className="nav-icon"
+                                onClick={this.handleToggle} />
                         </button>
                     </div>
-                    <ul className={this.state.isOpen?"nav-links show-nav": "nav-links"}>
+                    <ul className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}>
                         <li>
                             <Link to="/">Home</Link>
                         </li>
