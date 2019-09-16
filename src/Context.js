@@ -58,35 +58,59 @@ class RoomProvider extends Component {
 
     handleChange = event => {
         const target = event.target;
-        const value = event.type === 'checkbox'? target.checked:target.value;
+        const value = event.type === 'checkbox' ? target.checked : target.value;
         const name = event.target.name;
 
         this.setState({
-            [name]:value
-        },this.filterRooms)
-
-        // console.log(`this is type: ${event.type}, this is name: ${event.target.name}, this is value: ${target.value}`);
+            [name]: value
+        }, this.filterRooms)
     };
 
     filterRooms = () => {
         let {
-            rooms, 
-            type, 
-            capacity, 
-            price, 
-            minSize, 
-            maxSize, 
-            breakfast, 
+            rooms,
+            type,
+            capacity,
+            price,
+            minSize,
+            maxSize,
+            breakfast,
             pets
         } = this.state;
 
+        //  all the rooms
         let tempRooms = [...rooms];
-        if(type !== 'all') {
-             tempRooms = tempRooms.filter(room=> room.type === type);
+
+        // transform value
+        capacity = parseInt(capacity)
+
+        // filter by type
+        if (type !== 'all') {
+            tempRooms = tempRooms.filter(room => 
+                room.type === type);
         }
+
+        //  filter by capacity
+        if (capacity !== 1) {
+            tempRooms = tempRooms.filter(room => 
+                room.capacity >= capacity);
+        }
+        // filter by price
+        tempRooms = tempRooms.filter(room => room.price <= price);
+        
+        /*
+        // filter by size
+        tempRooms = tempRooms.filter(room=> room.minSize >= minSize && room.maxSize <= maxSize);
+
+        // filter by breakfast
+        tempRooms = tempRooms.filter(room=>room.breakfast === true);
+
+        // filter by pets
+        tempRooms = tempRooms.filter(rooms=> rooms.pets === true);
+    */
         this.setState({
-            sortedRooms: tempRooms
-        });
+            sortedRooms: tempRooms 
+        }); 
     };
 
     render () {
