@@ -23,7 +23,7 @@ class Services extends Component {
             },
             {
                 icon: <FaBeer />,
-                title: "Tastiest Beer",
+                title: "Bottomless Beer",
                 info: "lQui ut ut laborum qui ipsum veniam velit exercitation ex tempor non."
             }
         ]

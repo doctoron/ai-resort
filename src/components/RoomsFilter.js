@@ -37,7 +37,7 @@ const RoomsFilter = ({ rooms }) => {
     ));
     // person capacity 
     let person = getUnique(rooms, 'capacity');
-    person = person.map((item,index)=>{
+    person = person.map((item, index) => {
         return <option key={index} value={item}>
             {item}
         </option>
@@ -87,13 +87,62 @@ const RoomsFilter = ({ rooms }) => {
                         min={minPrice}
                         max={maxPrice}
                         value={price}
-                        className="form-control"
                         onChange={handleChange}
+                        className="form-control"
                     />
-                </div> 
+
+                </div>
                 {/* end of room price */}
-            </form>
-        </section>
+
+                {/* room size */}
+                <div className="form-group">
+                    <label htmlFor="price">room size</label>
+                    <div className="size-inputs">
+                        <input
+                            type="number"
+                            name="minSize"
+                            value={minSize}
+                            onChange={handleChange}
+                            className="size-input"
+                        />
+                        <input
+                            type="number"
+                            name="maxSize"
+                            value={maxSize}
+                            onChange={handleChange}
+                            className="size-input"
+                        />
+                    </div>
+                </div>
+                {/* end of room size */}
+                {/* extras */}
+                {/* breakfast */}
+                <div className="form-group">
+                    <div className="single-extra">
+                        <input
+                            type="checkbox"
+                            name="breakfast"
+                            id="breakfast"
+                            checked={breakfast}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="breakfast">breakfast</label>
+                    </div>
+                {/* end of breakfast */}
+                {/* pets allowed */}
+                <div className="single-extra">
+                <input
+                    type="checkbox"
+                    name="pets"
+                    checked={pets}
+                    onChange={handleChange}
+                />
+                <label htmlFor="pets">pets</label>
+                    </div>
+                </div>
+                {/* end of pets allowed */ }
+            </form >
+        </section >
     );
 };
 

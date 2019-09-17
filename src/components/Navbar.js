@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.svg';
+import logo from '../images/logo.jpeg';
 import { FaAlignRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -16,8 +16,8 @@ export default class Navbar extends Component {
                 <div className="nav-center">
                     <div className="nav-header">
                         {/* <h3 className="nav-header"> Antonio Island</h3> <br /> */}
-                        <Link to="/">
-                            <img src={logo} alt="Antonio Beach Resort" />
+                        <Link to="/" className="nav-image">
+                            <img src={logo} className="nav-image" alt="Antonio Beach Resort" />
                         </Link>
                         <button
                             type="button"

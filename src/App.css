@@ -107,6 +107,14 @@ h6 {
   cursor: pointer;
   outline: none;
 }
+.nav-image {
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  max-height: 80px;
+  max-width: 350px;
+}
 .nav-icon {
   font-size: 1.5rem;
   color: var(--primaryColor);
@@ -230,7 +238,7 @@ h6 {
 
 /* services */
 .services {
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 .services {
   background: var(--darkGrey);
@@ -437,7 +445,7 @@ h6 {
 /* end of single room*/
 /* roomlist */
 .roomslist {
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 .roomslist-center {
   width: 80vw;
@@ -462,7 +470,7 @@ h6 {
 /* end of roomlist */
 /*  rooms fitler*/
 .filter-container {
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 .filter-form {
   width: 60vw;
